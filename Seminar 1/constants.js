@@ -15,6 +15,7 @@
 
 function testVariables(param)
 {
+    console.log(var1);
     if (param===true){
         var var1= 1;
         let var2 = 2;
@@ -25,4 +26,17 @@ console.log(var2);
 console.log(var3);
 }
 
-testVariables(true);
+// testVariables(true);
+const testVariables2 = (param) => {
+    console.log(var1);
+    if (param===true){
+        var var1= 1;
+        let var2 = 2;
+        const var3 = 3;
+    }
+console.log(var1);
+console.log(var2);
+console.log(var3);
+};
+
+testVariables2(true);
