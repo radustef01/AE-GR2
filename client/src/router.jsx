@@ -8,6 +8,10 @@ import CreateProductPage from "./pages/CreateProductPage";
 import EditProductPage from "./pages/EditProductPage";
 import { ProtectedLayout, AuthLayout } from "./components/ProtectedRoute";
 import { AdminRoute } from "./components/AdminRoute";
+import CartPage from './pages/CartPage';
+import CheckoutSuccessPage from './pages/CheckoutSuccessPage';
+import OrdersPage from './pages/OrdersPage';
+
 
 export const router = createBrowserRouter([
   {
@@ -22,11 +26,24 @@ export const router = createBrowserRouter([
         path: "products",
         element: <ProductsPage />,
       },
+      {
+        path: '/cart',
+        element: <CartPage />,
+      },
+      {
+        path: '/checkout/success',
+        element: <CheckoutSuccessPage />,
+      },
       // Protected routes - require authentication
       {
         element: <ProtectedLayout />,
         children: [],
       },
+      {
+        path: '/orders',
+        element: <OrdersPage />,
+      },
+
       // Admin routes - require authentication AND admin role
       {
         element: <AdminRoute />,
